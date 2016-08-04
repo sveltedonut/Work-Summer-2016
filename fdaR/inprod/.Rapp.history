@@ -1,0 +1,94 @@
+asdf
+sourceRecursive <- function(path = ".") {#
+  dirs <- list.dirs(path, recursive = FALSE)#
+  files <- list.files(path, pattern = "^.*[Rr]$", include.dirs = FALSE, full.names = TRUE)#
+  for (f in files)#
+    source(f)#
+  for (d in dirs)#
+    sourceRecursive(d)#
+}
+library(fda)
+ayy
+ayy
+ayy
+ayy
+ayy
+ayy
+ayy
+cd /Users
+getwd()
+setwd("/Users/harry/Documents/MATLAB/fdaR-Harry")
+getwd()
+R CMD SHLIB inprod_C.c
+CMD SHLIB inprod_C.c
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+getwd()
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+setwd("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+setwd("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+getwd()
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/inprod/inprod_test.R")
+source("/Users/harry/Documents/MATLAB/fdaR-Harry/bspline/bspline_test.R")
