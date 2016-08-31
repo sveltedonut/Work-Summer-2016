@@ -1,43 +1,34 @@
 //
-//  bsplineC.c
-//  /Users/harry/Desktop/Skule 1T6-1T7/UTPGC/Logo/logo-text-alt.png
+//  bsplineC.c - thetafun
 //
-//  Created by Harry Jiang on 2016-06-23.
+//  Created by Harry Jiang on 2016-08-29.
 //
 //
 
 #include "mex.h"
+#include "bsplineC.h"
 
-void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
-    
-    // Macros for output
-    #define BSPLINEMAT  plhs[0]
-    
-    // Macros for input
-    #define X           prhs[0]
-    #define BREAKS      prhs[1]
-    #define NORDER      prhs[2]
-    #define NDERIV      prhs[3]
+// bsplineC function
+mxArray* bsplineC(mxArray* X, mxArray* BREAKS, mxArray* NORDER, long nderiv) {
     
     // Initialize variables
     long i, j, k, r, jj, nd, ns, nxs, nxn, left, leftpr;
     double saved, tr, tl, term, temp;
     
     // Initialize inputs and constants
-    long nx         = mxGetN(X);                    // number of evaluation points
+    long nx         = mxGetM(X);                    // number of evaluation points
     double *x       = mxGetPr(X);                   // array of evaluation points
     long nb         = mxGetN(BREAKS);               // number of breakpoints
     double *breaks  = mxGetPr(BREAKS);              // array of breakpoints
     long norder     = (long)mxGetPr(NORDER)[0];     // order of b-spline
-    long nderiv     = (long)mxGetPr(NDERIV)[0];     // derivative requested
     
     nd         = nderiv + 1;
     ns         = nb - 2 + norder;                   // number of splines to evaluate
     
     // Initialize output
     double *basismat;
-    BSPLINEMAT  = mxCreateDoubleMatrix(nx, ns, mxREAL); // initialize nx by ns matrix
-    basismat    = mxGetPr(BSPLINEMAT);
+    mxArray* BSPLINEMAT = mxCreateDoubleMatrix(nx, ns, mxREAL); // initialize nx by ns matrix
+    basismat            = mxGetPr(BSPLINEMAT);
     for (i = 0; i < nx * ns; i++) basismat[i] = 0;
     
     
@@ -55,6 +46,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     for (i = 0; i < nx; i++) {
         
         // Find value of left
+        left = 0;
         if (x[i] >= breaks[nb - 1]) left = ns - 1;
         else while (knots[left+1] <= x[i]) left++;
         
@@ -115,5 +107,40 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     // Free dynamically allocated variables
     free(b);
     free(knots);
-    return;
+    return BSPLINEMAT;
+}
+
+// Evaluate functional data object
+mxArray* call_eval_fd(mxArray* RNG, mxArray* BREAK, mxArray* ORDER, mxArray* COEFS, long Lfdobj) {
+    
+    // Call bsplineC
+    mxArray* BASISMAT   = bsplineC(RNG, BREAK, ORDER, Lfdobj);
+    double* basismat    = mxGetPr(BASISMAT);
+    
+    double* coefs       = mxGetPr(COEFS);
+    
+    long M              = mxGetM(BASISMAT);
+    long N              = mxGetN(COEFS);
+    long I              = mxGetN(BASISMAT);
+    
+    mxArray* EVALARRAY  = mxCreateDoubleMatrix(M, N, mxREAL);
+    double* evalarray   = mxGetPr(EVALARRAY);
+    
+    long m, n, i;
+    
+    for (m = 0; m < M; m++) {
+        for (n = 0; n < N; n++) {
+            
+            long evalindex = m + M*n;
+            
+            evalarray[evalindex] = 0;
+            
+            for (i = 0; i < I; i++) {
+                evalarray[evalindex] += basismat[m + M*i] * coefs[i + I*n];
+            }
+            
+        }
+    }
+    
+    return EVALARRAY;
 }
